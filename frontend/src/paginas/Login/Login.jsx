@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 import { Arealogin, Login1, Form } from './StyleLog';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    
+    const handleLogin = async (e) => {
+        e.preventDefault();
 
-    const handleLogin = async () => {
         try {
             // Enviar dados de login para o servidor
             const response = await axios.post('http://localhost:3008/api/auth/login', {
@@ -30,14 +34,15 @@ const Login = () => {
             console.log('Usuário conectado:', userData);
 
             // Aqui você pode redirecionar para a página desejada após o login
-            window.location.href = '/forum';
+            //window.location.href = '/forum';
+            navigate('/forum')
         } catch (error) {
 
             alert('Erro')
         }
     };
 
-    return (
+    return (        
         <Arealogin>
             <Login1>
             <Form>
@@ -45,7 +50,13 @@ const Login = () => {
                         <h1>LOGIN</h1>
                     </div>
 
-                <input placeholder="Email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input 
+                    placeholder="Email" 
+                    type="text" 
+                    value={email} 
+                    onChange={(e) => 
+                    setEmail(e.target.value)} 
+                />
 
                 <input placeholder="Senha" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 

@@ -18,13 +18,12 @@ export const Login1 = styled.div`
   width: 355px;
   height: 380px;
   padding: 35px;
-  margin-top: 250px;
+  margin-top: 100px;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin-top: -10vh;
   width: 50vh;
   align-items: center;
 

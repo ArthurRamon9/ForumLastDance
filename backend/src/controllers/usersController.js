@@ -26,6 +26,7 @@ async function listUsers(request, response) {
 
 async function storeUser(request, response) {
     try {
+
         const name = request.body.name;
         const email = request.body.email;
         const password = request.body.password;
@@ -41,10 +42,12 @@ async function storeUser(request, response) {
 
         connection.query(query, params, (err, results) => {
             if (!err) {
-                response.status(201).json({
-                    success: true,
-                    message: 'Sucesso! Usuário cadastrado.',
-                    data: results
+                response
+                    .status(201)
+                    .json({
+                        success: true,
+                        message: 'Sucesso! Usuário cadastrado.',
+                        data: results
                 });
             } else {
                 response.status(400).json({

@@ -78,6 +78,7 @@ export const ContainerPublicacoes = styled.div`
     justify-content: center;
     gap: 20px;
     
+    
 `;
 
 export const Publicacao = styled.div`

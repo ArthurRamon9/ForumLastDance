@@ -5,18 +5,15 @@ import Erro from "../paginas/Erro/Erro"
 import Forum from "../paginas/Forum/Forum.jsx"
 import Cadastro from "../paginas/Cadastro/Cadastro.jsx"
 
-
-
 function Rotas(){
     return(
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Cadastro />}/>
-                <Route path="login" element={<Login/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="feed" element={<Feed/>}/>
-                <Route path="Forum" element={<Forum/>}/>
+                <Route path="/forum" element={<Forum/>}/>
                 <Route path="*" element= {<Erro/>}/>
-
 
             </Routes>
         </BrowserRouter>
