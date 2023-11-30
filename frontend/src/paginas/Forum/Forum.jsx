@@ -124,30 +124,30 @@ function Forum() {
             });
         });
 
-    //     botaoCadastro.addEventListener("click", function () {
-    //         console.log("Botão de cadastro clicado!");
-    //     });
+        //     botaoCadastro.addEventListener("click", function () {
+        //         console.log("Botão de cadastro clicado!");
+        //     });
 
-    //     fotoUsuario.addEventListener("click", function () {
-    //         console.log("Foto de usuário clicada!");
-    //     });
+        //     fotoUsuario.addEventListener("click", function () {
+        //         console.log("Foto de usuário clicada!");
+        //     });
     }, []);
 
     return (
         <div>
             <Cabecalho>
-                <OpcoesHeader>
-                    <CadastroLogin>Login</CadastroLogin>
-                    <CadastroLogin>Cadastro</CadastroLogin>
-                </OpcoesHeader>
                 <TituloForum>G A L P</TituloForum>
                 <Logo src="../../log0.png" alt="Logo" />
             </Cabecalho>
+
+
             <BarraPesquisa>
                 <PesquisarInput type="text" id="pesquisar-input" placeholder="Pesquisar..." />
             </BarraPesquisa>
 
             <ContainerPublicacoes id="container-publicacoes"></ContainerPublicacoes>
+
+        <div style={{display: 'flex', justifyContent:"center"}}>
 
             <Form id="formulario-publicacao">
                 <InfoUsuario>
@@ -156,7 +156,9 @@ function Forum() {
                     </FotoUsuario>
                     <FormInput type="text" id="nome-usuario" placeholder="Nome de usuário" required />
                 </InfoUsuario>
+
                 <FormTextarea id="mensagem" placeholder="Mensagem" required />
+
                 <SelecaoPublicacao>
                     <FormSelect id="selecao-publicacao">
                         <option value="municipal">Municipal</option>
@@ -166,6 +168,7 @@ function Forum() {
                 </SelecaoPublicacao>
                 <FormSubmitButton type="submit" value="Publicar" />
             </Form>
+        </div>
         </div>
     );
 }

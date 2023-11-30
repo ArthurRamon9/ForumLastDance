@@ -1,38 +1,60 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { Arealogin, Login1, Form } from './StyleLog'
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Arealogin, Login1, Form } from './StyleLog';
 
-function Cadastro() {
+const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
+    const handleLogin = async () => {
+        try {
+            // Enviar dados de login para o servidor
+            const response = await axios.post('http://localhost:3008/api/auth/login', {
+                email: email,
+                password: password
+            });
+
+            // Se o login for bem-sucedido, você pode fazer algo com os dados do usuário e o token
+            const userData = response.data.data;
+            const token = userData.token;
+
+            if (response.data.success) {
+                alert('Sucesso! Maravilha!')
+            } else {
+                alert('Erro ao entrar!')
+            }
+
+
+            localStorage.setItem('token', token);
+
+            console.log('Usuário conectado:', userData);
+
+            // Aqui você pode redirecionar para a página desejada após o login
+            window.location.href = '/forum';
+        } catch (error) {
+
+            alert('Erro')
+        }
+    };
 
     return (
-
         <Arealogin>
             <Login1>
-                <Form>
-                    <div className="title">
+            <Form>
+            <div className="title">
                         <h1>LOGIN</h1>
                     </div>
-                    <label>Nome Usuario</label>
-                    <input
-                    type="text"
-                    name="nomeCompleto"
-                    placeholder=" Confirmação da Senha"
 
-                    />
-                    <input type="text" name="email" placeholder="Email" autoFocus />
-                    <input type="password" name="senha" placeholder=" Senha" />
-                    <input
-                        type="password"
-                        name="confirmesenha"
-                        placeholder=" Confirmação da Senha"
-                    />
-                    <button type="submit" value="Finalizar" id="botao"> Cadastrar </button>
-                </Form>
+                <input placeholder="Email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+                <input placeholder="Senha" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+                <button onClick={handleLogin}>Login</button>
+            </Form>
             </Login1>
         </Arealogin>
-    )
-}
 
-export default Cadastro;
+    );
+};
+
+export default Login;

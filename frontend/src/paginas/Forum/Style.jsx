@@ -1,4 +1,6 @@
+
 import styled from 'styled-components'
+
 
 export const Cabecalho = styled.header`
     background-color: #A38F85;
@@ -34,10 +36,13 @@ export const OpcoesHeader = styled.div`
     gap: 20px;
 `;
 
-export const CadastroLogin = styled.span`
+export const CadastroLogin = styled.a`
+    color: #fff;
     font-size: 18px;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+
+ 
 `;
 
 export const BarraPesquisa = styled.div`
@@ -57,6 +62,7 @@ export const Main = styled.main`
     flex-direction: column;
     align-items: center;
     background-color: #D9D9D9;
+
 `;
 
 export const PesquisarInput = styled.input`
@@ -71,6 +77,7 @@ export const ContainerPublicacoes = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    
 `;
 
 export const Publicacao = styled.div`
@@ -88,19 +95,22 @@ export const Autor = styled.div`
 
 export const Conteudo = styled.div`
     margin-bottom: 5px;
+
 `;
 
 export const Data = styled.div`
     color: #888;
     font-size: 0.8em;
+   
 `;
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     margin-top: 100px;
     margin: 15  0px;
+    width: 500px;
 `;
 
 export const InfoUsuario = styled.div`

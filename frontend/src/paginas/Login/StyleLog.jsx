@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const Arealogin = styled.section`    
 
     display: flex;
-    height: -154vh;
     margin-top: 5vh;
-    justify-content: center;`
+    justify-content: center;
+   
+    `
 
 
 export const Login1 = styled.div`
@@ -17,7 +18,7 @@ export const Login1 = styled.div`
   width: 355px;
   height: 380px;
   padding: 35px;
-  margin-top: 80px;
+  margin-top: 250px;
 `;
 
 export const Form = styled.form`
@@ -30,6 +31,7 @@ export const Form = styled.form`
 
   input{  margin-top: 9px;
   background-color: #D4B2A7;
+  margin: 5px;
   padding-left: 10px;
   width: 88%;
   height: 45px;
@@ -44,5 +46,10 @@ export const Form = styled.form`
 
     button{
         padding: 20px;
+        margin-top: 30px;
+        border-radius: 8px;
+        background-color: #8b8989;
+        cursor: pointer;
+        
         }
     `;

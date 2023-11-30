@@ -23,7 +23,6 @@ export const Cadastro1 = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin-top: -10vh;
   width: 50vh;
   align-items: center;
 
@@ -36,7 +35,6 @@ export const Form = styled.form`
   border: none;
   outline: none;
   border-radius: 8px;
-  font-family: 'Times New Roman', Times, serif;
 
   &::placeholder {
     color: black;
@@ -44,6 +42,10 @@ export const Form = styled.form`
 
     button{
         padding: 20px;
-        background-color: blue;
+        background-color: #8b8989;
+        margin-top: 50px;
+        border-radius: 7px;
+        cursor: pointer;
+        
         }
     `;
